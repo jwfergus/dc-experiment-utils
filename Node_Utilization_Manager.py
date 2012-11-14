@@ -76,7 +76,7 @@ def test():
 			#
 			#	Sleep until next time window
 			#
-			print "Current Time Window: " + str(current_row) + "; sleep time: " + sleep_time_diff
+			print "Current Time Window: " + str(current_row) + "; sleep time: " + str(sleep_time_diff)
 			time.sleep(sleep_time_diff)
 			
 
