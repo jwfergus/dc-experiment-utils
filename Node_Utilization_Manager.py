@@ -14,6 +14,7 @@ import os	# Lets us issue bash commands
 import sys	# Get command line arguments
 from datetime import datetime	# Naturally, lets us get the current time
 import time
+import subprocess
 
 
 def start_processes(number_of_processes, command_args):
@@ -48,7 +49,6 @@ def test():
 		# Need to switch from 'with' to try/except at some point
 	with open(sys.argv[1], 'rb') as schedule_file:
 		schedule_reader = csv.reader(schedule_file)
-		schedule_reader.next() # Move past the first line of file (just a comment)
 		
 		#
 		# Start our utilization processes and store them in util_procs
