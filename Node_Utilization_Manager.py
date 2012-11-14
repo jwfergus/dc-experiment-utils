@@ -64,6 +64,8 @@ def test():
 		while True:
 			current_time = int(datetime.now().strftime('%s'))
 			current_row = schedule_reader.next()
+			if current_row[2] == "-1":
+				os.system("poweroff now")
 			sleep_time_diff = (int(current_row[1]) - current_time)
 
 			#
