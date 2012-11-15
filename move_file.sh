@@ -22,8 +22,6 @@ spawn scp $filename bluetool@$input_ip:/home/bluetool/
 
 
 # When prompted for a password, give it (MUST BE SET AT THE TOP OF THE FILE)
-expect "?" 
-send "yes\r"
 expect "password:" 
 send "$pass\r" 
 expect "$ "

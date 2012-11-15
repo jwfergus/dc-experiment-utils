@@ -12,6 +12,7 @@
 #	author: Joshua Ferguson
 #		jwfergus@asu.edu | joshuawferguson@gmail.com	
 import math
+import os
 
 def generate_server_chassis_map():
 	server_chassis_map = list()
@@ -20,7 +21,13 @@ def generate_server_chassis_map():
 		for server_id in range(1,37):
 			server_chassis_map.append((("192.168."+ str(rack) + "." + str(server_id)),str(int(math.floor(chassis_counter/12)))))
 			chassis_counter +=1
-	print server_chassis_map
+
+
+	for server in server_chassis_map:
+		if((" " + server[0].split(".")[3] + " ") in " 1 2 3 4 5 6 13 14 15 16 17 18 25 26 27 28 29 30 "):
+			continue
+		os.system("./move_file Chassis-" + server[1] + ".schedule "+ server[0])
+
 
 	
 
