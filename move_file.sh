@@ -14,8 +14,8 @@
 set pass "bluetool"
 
 # Get IP address as input
-set input_ip [lindex $argv 0]
-set filename [lindex $argv 1]
+set filename [lindex $argv 0]
+set input_ip [lindex $argv 1]
 set timeout 5
 # spawn the scp thread
 spawn scp $filename bluetool@$input_ip:/home/bluetool/
