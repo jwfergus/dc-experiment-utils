@@ -26,9 +26,8 @@ def generate_server_chassis_map():
 	for server in server_chassis_map:
 		if((" " + server[0].split(".")[3] + " ") in " 1 2 3 4 5 6 13 14 15 16 17 18 25 26 27 28 29 30 "):
 			continue
-		os.system("./move_file Chassis-" + server[1] + ".schedule "+ server[0])
-		os.system("./move_file utilization.c "+ server[0])
-		os.system("./move_file Node_Utilization_Manager "+ server[0])
+
+		os.system("./populate_known_hosts.sh "+ server[0])
 
 
 if __name__ == "__main__":
