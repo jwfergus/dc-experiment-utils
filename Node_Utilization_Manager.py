@@ -35,17 +35,6 @@ def kill_processes(process_list):
 		os.system("kill -9 " + str(process.pid))
 
 def main():
-
-	for process in cpu_limit_procs:
-		print "cpulimit process: " + str(process.pid) + " started."
-	time.sleep(6)
-	kill_processes(cpu_limit_procs)
-	print "cpulimit processes killed"
-	time.sleep(6)
-
-
-def main():
-	os.system("gcc -lpthread -o util utilization.c")
 		# Need to switch from 'with' to try/except at some point
 	with open(sys.argv[1], 'rb') as schedule_file:
 		schedule_reader = csv.reader(schedule_file)
