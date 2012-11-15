@@ -44,8 +44,8 @@ def main():
 	time.sleep(6)
 
 
-def test():
-
+def main():
+	os.system("gcc -lpthread -o util utilization.c")
 		# Need to switch from 'with' to try/except at some point
 	with open(sys.argv[1], 'rb') as schedule_file:
 		schedule_reader = csv.reader(schedule_file)
@@ -64,7 +64,7 @@ def test():
 		while True:
 			current_time = int(datetime.now().strftime('%s'))
 			current_row = schedule_reader.next()
-			if current_row[2] == "-1":
+			if current_row[2] == "0":
 				os.system("poweroff now")
 			sleep_time_diff = (int(current_row[1]) - current_time)
 
@@ -84,5 +84,4 @@ def test():
 
 
 if __name__ == "__main__":
-#	main()
-	test()
+	main()
