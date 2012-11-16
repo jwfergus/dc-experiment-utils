@@ -91,7 +91,7 @@ void *foreverMemLoop(void *arg)
 
 int main(int argc, char *argv[])
 {
-	pthread_t pth1, pth2, pth3, pth4, pth5, pth6;
+	pthread_t pth1, pth2, pth3, pth4;
 
 	pthread_create(&pth1,NULL,foreverCPULoop,"processing...");
 	pthread_create(&pth2,NULL,foreverCPULoop,"processing...");
